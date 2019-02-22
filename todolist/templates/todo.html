@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+{% for todo in todos.all %}
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">{{todo.item}}</p>
+            <a href="{% url 'edit' todo.id %}" type="button" class="btn" style="background-color: palevioletred; color:whitesmoke">edit</a>
+            <a href="{% url 'destroy' todo.id %}" type="button" class="btn" style="background-color: plum; color:whitesmoke">delete</a>
+        </div>
+    </div>
+</div>
+<br>
+{% endfor %}
+{% endblock %}
