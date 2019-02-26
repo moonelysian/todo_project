@@ -6,7 +6,11 @@
     <br>
     <div class="card">
         <div class="card-body">
-            <p class="card-text">{{todo.item}}</p>
+            <p class="card-text">{{todo.item}}
+                <br>
+                {{todo.user_id}}
+            </p>
+            
             <a href="{% url 'edit' todo.id %}" type="button" class="btn" style="background-color: palevioletred; color:whitesmoke">edit</a>
             <a href="{% url 'destroy' todo.id %}" type="button" class="btn" style="background-color: plum; color:whitesmoke">delete</a>
         </div>

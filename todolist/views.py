@@ -14,7 +14,7 @@ def create(request):
         form = TodoPost(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            #post.user= current user()
+            post.user_id = request.user
             post.save()
             return redirect('todo')
     else:

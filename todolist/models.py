@@ -1,12 +1,17 @@
 from django.db import models
+from django.conf import settings
 
 class Todo(models.Model):
     item = models.TextField()
-    #user = curren_user
-    #작성시간...?
+    user_id = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        blank = False,
+        null = True
+    )
 
     def __str__(self):
-        return self.title
+        return self.item
 
 
 
