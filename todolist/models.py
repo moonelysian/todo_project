@@ -3,7 +3,7 @@ from django.conf import settings
 
 class Todo(models.Model):
     item = models.TextField()
-    user_id = models.ForeignKey(
+    username = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         blank = False,

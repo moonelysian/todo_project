@@ -7,14 +7,15 @@ def home(request):
 
 def todo(request):
     todos = Todo.objects
-    return render(request, 'todo.html', {'todos': todos})
+    current_user = request.user
+    return render(request, 'todo.html', {'todos': todos , 'current_user': current_user})
 
 def create(request):
     if (request.method == 'POST'):
         form = TodoPost(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.user_id = request.user
+            post.username = request.user
             post.save()
             return redirect('todo')
     else:
