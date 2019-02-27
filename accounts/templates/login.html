@@ -8,20 +8,33 @@
 
 
 {% block contents %}
-<h1>Login</h1>
+<div class="container pt-3">
+    <div class="jumbotron pt-4 pb-4" style ="background-color: thistle;">
+        <div class="row  mt-0">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm border border-white">
+                <h1 class="display-4">Login</h1>
+                <hr class="my-4">
+                <form method="POST" action="{% url 'login'%}">
+    
+                    {% csrf_token %}
+                    Username:
+                    <br>
+                    <input name="username" type="text" value="">
+                    <br>
+                    Password:
+                    <br>
+                    <input name="password" type="password" value="">
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </form>
+            </div>
+            <div class="col-sm">
+            </div>
+        </div>  
+    </div>
+</div>
 
-<form method="POST" action="{% url 'login'%}">
-
-    {% csrf_token %}
-    Username:
-    <br>
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password" type="password" value="">
-    <br>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Login">
-</form>
 {% endblock %}

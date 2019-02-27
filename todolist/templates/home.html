@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-    login 하면 todo도 쓸 수 있고 다 할 수 있으니까 sign up / login 버튼 만들기
+<div class="container pt-3 ">
+    <div class="jumbotron" style ="background-color: thistle;">
+        <h1 class="display-4">Hello, TODO world!</h1>
+        <p class="lead">오늘의 할 일을 등록해보세요.</p>
+        <hr class="my-4">
+        <a href="{% url 'login' %}" type="button" class="btn" style="background-color: palevioletred; color:whitesmoke">Login</a>
+        <a href="{% url 'signup' %}" type="button" class="btn" style="background-color: plum; color:whitesmoke">Signup</a>
+    </div>
+</div>
 {% endblock %}

@@ -1,24 +1,38 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<h1>Sign Up!</h1>
+<div class="container pt-3">
+    <div class="jumbotron pt-4 pb-4"" style ="background-color: thistle;">
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm border border-white">
+                <h1 class="display-4">Sign Up!</h1>
+                <hr class="my-4">
+                
+                <form method="POST" action="{% url 'signup'%}">
 
-<form method="POST" action="{% url 'signup'%}">
+                    {% csrf_token %}
+                    Username:
+                    <br>
+                    <input name="username"  type="text" value="">
+                    <br>
+                    Password:
+                    <br>
+                    <input name="password1"  type="password" value="">
+                    <br>
+                    Confirm Password:
+                    <br>
+                    <input name="password2"  type="password" value="">
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Sign Up!">
+                </form>
+            </div>
+            <div class="col-sm">
+            </div>
+        </div>  
+    </div>
+</div>
 
-    {% csrf_token %}
-    Username:
-    <br>
-    <input name="username"  type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password1"  type="password" value="">
-    <br>
-    Confirm Password:
-    <br>
-    <input name="password2"  type="password" value="">
-    <br>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Sign Up!">
-</form>
 {% endblock %}
